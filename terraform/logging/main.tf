@@ -52,6 +52,10 @@ data "aws_s3_bucket" "logs" {
 # ---------------------------------------------------------------------------
 # CloudTrail
 # ---------------------------------------------------------------------------
+# Chiffrement SSE-S3 du bucket plutôt que clé KMS dédiée : choix assumé (cf. stack archive).
+# L'intégrité est assurée par Object Lock + validation des fichiers ; une clé KMS ajouterait
+# un coût fixe et une politique de clé de plus à protéger. Limite à citer dans le README.
+#trivy:ignore:AVD-AWS-0015
 resource "aws_cloudtrail" "main" {
   name                          = local.trail_name
   s3_bucket_name                = data.aws_s3_bucket.logs.id

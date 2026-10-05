@@ -3,9 +3,11 @@
 # événements IAM (us-east-1 -> région principale) et pour les findings GuardDuty.
 
 terraform {
+  required_version = ">= 1.10"
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
+      version = "~> 6.0"
     }
   }
 }
