@@ -29,9 +29,13 @@ fmt:
 	terraform fmt -recursive terraform
 
 validate:
-	@for s in bootstrap archive network workload; do \
+	@for s in bootstrap archive network workload logging detection; do \
 	  terraform -chdir=terraform/$$s init -backend=false -input=false >/dev/null && \
 	  terraform -chdir=terraform/$$s validate || exit 1; done
 
 scan:
 	trivy config --exit-code 1 --severity HIGH,CRITICAL terraform
+
+.PHONY: test rules-test
+test:                 ## tests hors ligne (pytest, moto) ; aucun appel AWS
+	python -m pytest -q

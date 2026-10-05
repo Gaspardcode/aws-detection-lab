@@ -18,3 +18,7 @@ __pycache__/
 # Données brutes d'attaque non anonymisées
 attacks/raw/
 *.local.json
+
+# Paquets Lambda générés par archive_file
+.build/
+.pytest_cache/
