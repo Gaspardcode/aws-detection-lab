@@ -1,0 +1,36 @@
+#!/bin/bash
+# Génère ${nb_files} dossiers patients FICTIFS et les dépose dans le bucket.
+# Bibliothèque standard Python uniquement (pas de pip au démarrage).
+set -euo pipefail
+exec > /var/log/seed-patients.log 2>&1
+
+mkdir -p /opt/patients && cd /opt/patients
+python3 - <<'PY'
+import json, random, uuid, datetime
+random.seed()
+prenoms = ["Camille","Louis","Léa","Hugo","Chloé","Jules","Manon","Arthur","Inès","Nathan","Sarah","Paul"]
+noms = ["Martin","Bernard","Dubois","Thomas","Robert","Richard","Petit","Durand","Leroy","Moreau","Simon","Laurent"]
+actes = ["Consultation généraliste","Radiographie","Analyse sanguine","Kinésithérapie","Ophtalmologie","Dentaire","Pharmacie"]
+diag = ["Hypertension","Diabète type 2","Asthme","Lombalgie","Migraine","Aucun"]
+for i in range(${nb_files}):
+    naissance = datetime.date(1940,1,1) + datetime.timedelta(days=random.randint(0, 30000))
+    dossier = {
+        "id": str(uuid.uuid4()),
+        "fictif": True,
+        "nom": random.choice(noms), "prenom": random.choice(prenoms),
+        "naissance": naissance.isoformat(),
+        # Faux NIR : commence par 9 (jamais attribué à une personne réelle)
+        "nir": "9" + "".join(random.choice("0123456789") for _ in range(12)),
+        "antecedents": random.sample(diag, 2),
+        "remboursements": [
+            {"acte": random.choice(actes), "montant": round(random.uniform(10, 300), 2)}
+            for _ in range(random.randint(1, 6))
+        ],
+    }
+    with open(f"patient-{i:04d}.json", "w") as f:
+        json.dump(dossier, f, ensure_ascii=False)
+PY
+
+aws s3 cp /opt/patients "s3://${bucket}/dossiers/" --recursive --only-show-errors \
+  --sse aws:kms --sse-kms-key-id "${key_arn}"
+echo "seed OK : $(ls /opt/patients | wc -l) dossiers"

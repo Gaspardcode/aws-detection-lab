@@ -1,0 +1,6 @@
+# Copier en backend.hcl (non versionné) après `make bootstrap`,
+# avec les valeurs de `terraform -chdir=terraform/bootstrap output backend_hcl`.
+bucket       = "adl-tfstate-123456789012"
+region       = "eu-north-1"
+encrypt      = true
+use_lockfile = true
