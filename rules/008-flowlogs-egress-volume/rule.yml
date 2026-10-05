@@ -1,0 +1,20 @@
+title: "Volume sortant anormal vers Internet"
+id: "008"
+status: "experimental"
+description: "Exfiltration réseau : plus de 500 Mo sortis vers des IP publiques en une heure depuis le VPC."
+author: "adl"
+date: "2026-10-05"
+tags:
+  - "attack.exfiltration"
+  - "attack.t1048"
+logsource:
+  product: "aws"
+  service: "vpcflowlogs"
+detection:
+  selection:
+    flow_direction: "egress"
+    action: "ACCEPT"
+  condition: "selection | sum(bytes) by instance_id > 500000000"
+falsepositives:
+  - "Changement planifié par un administrateur"
+level: "medium"

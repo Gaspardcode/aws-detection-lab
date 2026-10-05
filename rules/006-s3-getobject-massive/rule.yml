@@ -1,0 +1,21 @@
+title: "Lecture massive du bucket patients par un principal"
+id: "006"
+status: "experimental"
+description: "Exfiltration : plus de 100 GetObject par heure par principal sur le bucket patients."
+author: "adl"
+date: "2026-10-05"
+tags:
+  - "attack.collection"
+  - "attack.exfiltration"
+  - "attack.t1530"
+logsource:
+  product: "aws"
+  service: "cloudtrail"
+detection:
+  selection:
+    eventSource: "s3.amazonaws.com"
+    eventName: "GetObject"
+  condition: "selection | count() by userIdentity.arn > 100"
+falsepositives:
+  - "Changement planifié par un administrateur"
+level: "high"

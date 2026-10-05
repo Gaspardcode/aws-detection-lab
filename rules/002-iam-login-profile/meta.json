@@ -1,0 +1,12 @@
+{
+  "id": "002-iam-login-profile",
+  "title": "Profil de connexion console créé ou modifié",
+  "severity": "high",
+  "kind": "pattern",
+  "attack": [
+    "T1098"
+  ],
+  "response": [],
+  "global": true,
+  "runbook": "rules/002-iam-login-profile/runbook.md"
+}

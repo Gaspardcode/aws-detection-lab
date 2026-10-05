@@ -1,0 +1,32 @@
+{
+  "version": "0",
+  "id": "00000000-0000-0000-0000-000000000000",
+  "detail-type": "AWS API Call via CloudTrail",
+  "source": "aws.iam",
+  "account": "111122223333",
+  "time": "2026-10-10T14:03:11Z",
+  "region": "us-east-1",
+  "resources": [],
+  "detail": {
+    "eventVersion": "1.09",
+    "eventTime": "2026-10-10T14:03:11Z",
+    "eventSource": "iam.amazonaws.com",
+    "eventName": "UpdateLoginProfile",
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "203.0.113.50",
+    "userAgent": "stratus-red-team",
+    "userIdentity": {
+      "type": "IAMUser",
+      "arn": "arn:aws:iam::111122223333:user/lab/dev-adl",
+      "accountId": "111122223333",
+      "accessKeyId": "AKIAEXAMPLEEXAMPLE00",
+      "userName": "dev-adl"
+    },
+    "requestParameters": {
+      "userName": "victim-user",
+      "passwordResetRequired": false
+    },
+    "eventType": "AwsApiCall",
+    "recipientAccountId": "111122223333"
+  }
+}

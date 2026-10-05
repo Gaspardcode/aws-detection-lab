@@ -1,0 +1,16 @@
+{
+  "id": "005-bucket-policy-changed",
+  "title": "Politique du bucket patients modifiée",
+  "severity": "critical",
+  "kind": "pattern",
+  "attack": [
+    "T1537"
+  ],
+  "response": [
+    "restore_bucket_policy",
+    "disable_access_key"
+  ],
+  "global": false,
+  "runbook": "rules/005-bucket-policy-changed/runbook.md",
+  "inspect": "bucket_policy_external_principal"
+}

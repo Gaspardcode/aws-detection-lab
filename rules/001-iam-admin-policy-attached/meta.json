@@ -1,0 +1,15 @@
+{
+  "id": "001-iam-admin-policy-attached",
+  "title": "Politique AdministratorAccess attachée à une identité IAM",
+  "severity": "critical",
+  "kind": "pattern",
+  "attack": [
+    "T1136.003",
+    "T1098"
+  ],
+  "response": [
+    "disable_access_key"
+  ],
+  "global": true,
+  "runbook": "rules/001-iam-admin-policy-attached/runbook.md"
+}

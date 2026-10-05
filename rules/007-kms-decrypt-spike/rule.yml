@@ -1,0 +1,20 @@
+title: "Pic de kms:Decrypt par un principal"
+id: "007"
+status: "experimental"
+description: "Exfiltration de données chiffrées : chaque GetObject SSE-KMS provoque un Decrypt ; plus de 200 par heure est anormal."
+author: "adl"
+date: "2026-10-05"
+tags:
+  - "attack.collection"
+  - "attack.t1530"
+logsource:
+  product: "aws"
+  service: "cloudtrail"
+detection:
+  selection:
+    eventSource: "kms.amazonaws.com"
+    eventName: "Decrypt"
+  condition: "selection | count() by userIdentity.arn > 200"
+falsepositives:
+  - "Changement planifié par un administrateur"
+level: "medium"

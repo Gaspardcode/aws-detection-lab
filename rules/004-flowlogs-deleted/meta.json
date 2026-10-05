@@ -1,0 +1,12 @@
+{
+  "id": "004-flowlogs-deleted",
+  "title": "VPC Flow Logs supprimés",
+  "severity": "high",
+  "kind": "pattern",
+  "attack": [
+    "T1562.008"
+  ],
+  "response": [],
+  "global": false,
+  "runbook": "rules/004-flowlogs-deleted/runbook.md"
+}

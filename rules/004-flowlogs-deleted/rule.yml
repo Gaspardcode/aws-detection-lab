@@ -1,0 +1,20 @@
+title: "VPC Flow Logs supprimés"
+id: "004"
+status: "experimental"
+description: "Effacement des traces réseau : suppression d'un flow log."
+author: "adl"
+date: "2026-10-05"
+tags:
+  - "attack.defense-evasion"
+  - "attack.t1562.008"
+logsource:
+  product: "aws"
+  service: "cloudtrail"
+detection:
+  selection:
+    eventSource: "ec2.amazonaws.com"
+    eventName: "DeleteFlowLogs"
+  condition: "selection"
+falsepositives:
+  - "Changement planifié par un administrateur"
+level: "high"

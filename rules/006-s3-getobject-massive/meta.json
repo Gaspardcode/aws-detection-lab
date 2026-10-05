@@ -1,0 +1,14 @@
+{
+  "id": "006-s3-getobject-massive",
+  "title": "Lecture massive du bucket patients par un principal",
+  "severity": "high",
+  "kind": "query",
+  "attack": [
+    "T1530"
+  ],
+  "response": [],
+  "global": false,
+  "runbook": "rules/006-s3-getobject-massive/runbook.md",
+  "threshold": 100,
+  "window": "1h"
+}

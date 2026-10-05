@@ -1,0 +1,23 @@
+title: "Politique du bucket patients modifiée"
+id: "005"
+status: "experimental"
+description: "Exfiltration par politique de bucket : ouverture vers un compte externe. EventBridge ne sait pas comparer les comptes, le triage inspecte la politique."
+author: "adl"
+date: "2026-10-05"
+tags:
+  - "attack.exfiltration"
+  - "attack.t1537"
+logsource:
+  product: "aws"
+  service: "cloudtrail"
+detection:
+  selection:
+    eventSource: "s3.amazonaws.com"
+    eventName:
+      - "PutBucketPolicy"
+      - "DeleteBucketPolicy"
+    requestParameters.bucketName|startswith: "adl-patients-"
+  condition: "selection"
+falsepositives:
+  - "Changement planifié par un administrateur"
+level: "critical"

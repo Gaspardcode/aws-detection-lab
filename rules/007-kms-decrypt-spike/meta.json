@@ -1,0 +1,14 @@
+{
+  "id": "007-kms-decrypt-spike",
+  "title": "Pic de kms:Decrypt par un principal",
+  "severity": "medium",
+  "kind": "query",
+  "attack": [
+    "T1530"
+  ],
+  "response": [],
+  "global": false,
+  "runbook": "rules/007-kms-decrypt-spike/runbook.md",
+  "threshold": 200,
+  "window": "1h"
+}

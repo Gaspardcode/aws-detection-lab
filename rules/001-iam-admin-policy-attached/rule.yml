@@ -1,0 +1,23 @@
+title: "Politique AdministratorAccess attachée à une identité IAM"
+id: "001"
+status: "experimental"
+description: "Escalade de privilèges ou persistance : une identité reçoit AdministratorAccess."
+author: "adl"
+date: "2026-10-05"
+tags:
+  - "attack.persistence"
+  - "attack.privilege-escalation"
+  - "attack.t1136.003"
+  - "attack.t1098"
+logsource:
+  product: "aws"
+  service: "cloudtrail"
+detection:
+  selection:
+    eventSource: "iam.amazonaws.com"
+    eventName|startswith: "Attach"
+    requestParameters.policyArn: "arn:aws:iam::aws:policy/AdministratorAccess"
+  condition: "selection"
+falsepositives:
+  - "Changement planifié par un administrateur"
+level: "critical"

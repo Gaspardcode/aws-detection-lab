@@ -1,0 +1,14 @@
+{
+  "id": "003-cloudtrail-tamper",
+  "title": "Journalisation CloudTrail arrêtée ou modifiée",
+  "severity": "critical",
+  "kind": "pattern",
+  "attack": [
+    "T1562.008"
+  ],
+  "response": [
+    "disable_access_key"
+  ],
+  "global": false,
+  "runbook": "rules/003-cloudtrail-tamper/runbook.md"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "008-flowlogs-egress-volume",
+  "title": "Volume sortant anormal vers Internet",
+  "severity": "medium",
+  "kind": "query",
+  "attack": [
+    "T1048"
+  ],
+  "response": [],
+  "global": false,
+  "runbook": "rules/008-flowlogs-egress-volume/runbook.md",
+  "threshold": 500000000,
+  "window": "1h"
+}

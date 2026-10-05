@@ -1,0 +1,23 @@
+{
+  "source": [
+    "aws.iam"
+  ],
+  "detail-type": [
+    "AWS API Call via CloudTrail"
+  ],
+  "detail": {
+    "eventSource": [
+      "iam.amazonaws.com"
+    ],
+    "eventName": [
+      "AttachUserPolicy",
+      "AttachRolePolicy",
+      "AttachGroupPolicy"
+    ],
+    "requestParameters": {
+      "policyArn": [
+        "arn:aws:iam::aws:policy/AdministratorAccess"
+      ]
+    }
+  }
+}

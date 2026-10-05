@@ -1,0 +1,36 @@
+{
+  "version": "0",
+  "id": "00000000-0000-0000-0000-000000000000",
+  "detail-type": "AWS API Call via CloudTrail",
+  "source": "aws.ec2",
+  "account": "111122223333",
+  "time": "2026-10-10T14:03:11Z",
+  "region": "eu-north-1",
+  "resources": [],
+  "detail": {
+    "eventVersion": "1.09",
+    "eventTime": "2026-10-10T14:03:11Z",
+    "eventSource": "ec2.amazonaws.com",
+    "eventName": "CreateFlowLogs",
+    "awsRegion": "eu-north-1",
+    "sourceIPAddress": "203.0.113.50",
+    "userAgent": "stratus-red-team",
+    "userIdentity": {
+      "type": "IAMUser",
+      "arn": "arn:aws:iam::111122223333:user/lab/dev-adl",
+      "accountId": "111122223333",
+      "accessKeyId": "AKIAEXAMPLEEXAMPLE00",
+      "userName": "dev-adl"
+    },
+    "requestParameters": {
+      "CreateFlowLogsRequest": {
+        "ResourceId": {
+          "content": "vpc-0123456789abcdef0",
+          "tag": 1
+        }
+      }
+    },
+    "eventType": "AwsApiCall",
+    "recipientAccountId": "111122223333"
+  }
+}
