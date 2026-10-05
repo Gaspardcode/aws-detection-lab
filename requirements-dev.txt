@@ -1,0 +1,4 @@
+boto3>=1.35
+moto[dynamodb,ec2,iam,s3,ssm]>=5.0
+pytest>=8
+pyyaml>=6
