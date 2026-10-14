@@ -21,8 +21,6 @@ exfiltration de dossiers patients → effacement des traces.*
 | Matrice de couverture | v0 : colonnes « mesuré » à remplir ([docs/coverage-matrix.md](docs/coverage-matrix.md)) |
 | MTTD / MTTR | **à mesurer** : aucun chiffre n'est annoncé tant que le scénario n'a pas été rejoué 3 fois |
 
-Le planning détaillé est dans [ROADMAP.md](ROADMAP.md).
-
 ## Architecture
 
 ```

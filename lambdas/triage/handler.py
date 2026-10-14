@@ -216,7 +216,7 @@ def send_discord(payload):
 
 def trigger_response(alert):
     fn = os.environ.get("RESPONSE_FUNCTION")
-    # Réponse automatique réservée aux alertes critiques (choix du ROADMAP)
+    # Réponse automatique réservée aux alertes critiques (choix de conception)
     if not fn or not alert["actions"] or alert["severity"] != "critical":
         return False
     client("lambda").invoke(FunctionName=fn, InvocationType="Event", Payload=json.dumps(

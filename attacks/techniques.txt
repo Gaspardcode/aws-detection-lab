@@ -1,4 +1,4 @@
-# Techniques Stratus visées (ROADMAP, week-end 1). Vérifier les noms avec `stratus list --platform aws`.
+# Techniques Stratus visées. Vérifier les noms avec `stratus list --platform aws`.
 # Les 4 premières colonnes de docs/coverage-matrix.md en dépendent.
 aws.credential-access.ec2-steal-instance-credentials
 aws.discovery.ec2-enumerate-from-instance

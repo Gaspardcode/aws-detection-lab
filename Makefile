@@ -22,7 +22,7 @@ apply:                ## applique le plan relu, jamais en aveugle
 
 destroy:
 	@if echo "$(PERSISTENT)" | grep -qw "$(STACK)"; then \
-	  echo "Refus : $(STACK) est persistant (voir ROADMAP)"; exit 1; fi
+	  echo "Refus : $(STACK) est persistant (stack à garder entre deux sessions)"; exit 1; fi
 	$(TF) destroy
 
 fmt:

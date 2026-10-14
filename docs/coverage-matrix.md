@@ -1,7 +1,7 @@
 # Matrice de couverture ATT&CK
 
 > **État : v0, avant mesure.** Les colonnes « Prévu » viennent de la conception (documentation AWS,
-> hypothèses du ROADMAP) et **ne sont pas des résultats**. Les colonnes « Mesuré » restent à
+> hypothèses de conception) et **ne sont pas des résultats**. Les colonnes « Mesuré » restent à
 > `à mesurer` jusqu'au week-end d'attaque ; elles seront remplies à partir de `attacks/runs.md`.
 > Les colonnes vides de la dernière colonne indiquent **où il faut encore écrire des règles**.
 

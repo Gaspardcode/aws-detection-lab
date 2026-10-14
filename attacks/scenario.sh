@@ -2,7 +2,7 @@
 # Scénario complet : clé d'un développeur fuitée -> reconnaissance -> escalade ->
 # exfiltration -> effacement des traces. Journalise l'heure de chaque étape dans
 # attacks/raw/<run>.jsonl pour calculer le MTTD / MTTR ensuite.
-# NON exécuté tant que le week-end 2 n'a pas commencé : cf. ROADMAP.
+# Pas encore exécuté : aucun résultat publié tant que le scénario n'a pas été rejoué.
 # Usage : AWS_PROFILE=lab-admin ADL_ACCOUNT_ID=... CONFIRM_LAB=yes attacks/scenario.sh
 source "$(dirname "$0")/lib.sh"
 

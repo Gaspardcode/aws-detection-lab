@@ -1,0 +1,8 @@
+# Configuration gitleaks : règles par défaut + exception pour la clé d'exemple
+# AKIAEXAMPLEEXAMPLE00, utilisée dans les événements CloudTrail de test (rules/*, tests/).
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Clé d'accès AWS fictive des jeux de test"
+regexes = ['AKIAEXAMPLEEXAMPLE00']
